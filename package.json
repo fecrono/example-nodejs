@@ -1,0 +1,23 @@
+{
+  "name": "express-graphql",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "build": "babel ./src -d ./__build__ -D -s"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-plugin-inline-import": "^3.0.0",
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@babel/runtime": "^7.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
