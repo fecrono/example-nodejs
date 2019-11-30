@@ -2,3 +2,4 @@ yarn add -D @babel/cli @babel/core @babel/node @babel/plugin-transform-runtime @
 
 yarn add dotenv express @babel/polyfill @babel/runtime
 
+yarn add apollo-server-express graphql
