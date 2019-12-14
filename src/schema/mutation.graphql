@@ -1,4 +1,6 @@
 type Mutation {
+    signup(input: InputSignup!): AuthPayload!
+    login(email: String!, password: String!): AuthPayload!
     createUser(input: InputCreateUser!): User!
     updateUser(id: ID!, input: InputUpdateUser!): User!
     deleteUser(id: ID!): Boolean!
@@ -8,6 +10,14 @@ type Mutation {
     createService(input: InputCreateService!): Service!
     updateService(id: ID!, input: InputUpdateService!): Service!
     deleteService(id: ID!): Boolean!
+}
+
+input InputSignup {
+    name: String!
+    lastname: String!
+    email: String!
+    password: String!
+    type: String!
 }
 
 input InputCreateUser {

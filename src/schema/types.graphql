@@ -3,6 +3,7 @@ type User {
     name: String!
     lastname: String!
     email: String!
+    password: String!
     type: String! # ADMIN, HOST, USER, ETC
     createdAt: String
     updatedAt: String
@@ -26,4 +27,9 @@ type Service{
     name: String!
     desc: String!
     icon: String!
+}
+
+type AuthPayload {
+    token: String
+    user: User
 }
