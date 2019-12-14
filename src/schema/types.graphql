@@ -20,6 +20,7 @@ type Room {
     lat: String!
     long: String!
     status: String!
+    services: [Service!]!
 }
 
 type Service{

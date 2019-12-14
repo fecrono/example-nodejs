@@ -76,7 +76,6 @@ const Mutation = {
 
         return true;
     },
-
     createRoom: async(parent, { input }, { currentUser }) => {
         if (!currentUser) {
             throw new Error('UNAUTHORIZED');

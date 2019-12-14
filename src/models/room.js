@@ -10,7 +10,8 @@ const RoomSchema = new Schema({
     direction: String,
     lat: String,
     long: String,
-    status: String
+    status: String,
+    services: [{ type: Schema.Types.ObjectId, ref: 'Service' }]
 }, {
     timestamps: true,
 });

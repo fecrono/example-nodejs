@@ -42,6 +42,7 @@ input InputCreateRoom{
     lat: String!
     long: String!
     status: String!
+    services: [ID!]!
 }
 
 input InputUpdateRoom{

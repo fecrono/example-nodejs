@@ -21,7 +21,9 @@ const Query = {
         if (!currentUser) {
             throw new Error('UNAUTHORIZED');
         }
-        return await Room.find().exec();
+        const rooms = await Room.find().populate('services').exec();
+        console.log(rooms);
+        return rooms;
     },
     room: async(parent, { id }, { currentUser }) => {
         if (!currentUser) {
