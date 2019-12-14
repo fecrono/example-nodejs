@@ -2,4 +2,8 @@ type Query {
   status: String
   users: [User!]!
   user(id: ID!): User
+  rooms: [Room!]!
+  room(id: ID!):Room 
+  services: [Service!]!
+  service(id: ID!):Service 
 }

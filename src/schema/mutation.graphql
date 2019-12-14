@@ -1,5 +1,13 @@
 type Mutation {
     createUser(input: InputCreateUser!): User!
+    updateUser(id: ID!, input: InputUpdateUser!): User!
+    deleteUser(id: ID!): Boolean!
+    createRoom(input: InputCreateRoom!): Room!
+    updateRoom(id: ID!, input: InputUpdateRoom!): Room!
+    deleteRoom(id: ID!): Boolean!
+    createService(input: InputCreateService!): Service!
+    updateService(id: ID!, input: InputUpdateService!): Service!
+    deleteService(id: ID!): Boolean!
 }
 
 input InputCreateUser {
@@ -7,4 +15,45 @@ input InputCreateUser {
     lastname: String!
     email: String!
     type: String!
+}
+
+input InputUpdateUser {
+    name: String
+    lastname: String
+}
+
+input InputCreateRoom{
+    type:  String!
+    name: String!
+    desc: String!
+    price: Float!
+    thumbnail: String!
+    direction: String!
+    lat: String!
+    long: String!
+    status: String!
+}
+
+input InputUpdateRoom{
+    type:  String
+    name: String
+    desc: String
+    price: Float
+    thumbnail: String
+    direction: String
+    lat: String
+    long: String
+    status: String
+}
+
+input InputCreateService{
+    name: String!
+    desc: String!
+    icon: String!
+}
+
+input InputUpdateService{
+    name: String
+    desc: String
+    icon: String
 }

@@ -8,4 +8,22 @@ type User {
     updatedAt: String
 }
 
+type Room {
+    _id: ID!
+    type: String!
+    name: String!
+    desc: String!
+    price: Float!
+    thumbnail: String!
+    direction: String!
+    lat: String!
+    long: String!
+    status: String!
+}
 
+type Service{
+    _id: ID!
+    name: String!
+    desc: String!
+    icon: String!
+}
