@@ -2,7 +2,7 @@
   "name": "express-graphql",
   "version": "0.1.0",
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon -L src/index.js",
     "build": "babel ./src -d ./__build__ -D -s"
   },
   "devDependencies": {
@@ -20,6 +20,7 @@
     "apollo-server-express": "^2.9.12",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "graphql": "^14.5.8"
+    "graphql": "^14.5.8",
+    "mongoose": "^5.7.14"
   }
 }
