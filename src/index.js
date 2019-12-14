@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import mongoose from 'mongoose';
 import { createServer } from 'http';
-import { ApolloServer } from 'apollo-server-express';
+import { ApolloServer, PubSub } from 'apollo-server-express';
 import schema from './schema';
 import resolvers from './resolvers';
 import jwt from 'jsonwebtoken';
@@ -12,6 +12,9 @@ const MONGO_URI = process.env.MONGO_URI;
 
 // Instance Express
 const app = express();
+
+// Instance for PubSub
+const pubsub = new PubSub();
 
 // Config for Apollo Server
 const server = new ApolloServer({
@@ -25,13 +28,14 @@ const server = new ApolloServer({
     if (token) {
       currentUser = jwt.verify(token, process.env.JWT_SECRET);
     }
-    return { ...req, currentUser }
+    return { ...req, currentUser, pubsub }
   },
 })
 
 server.applyMiddleware({ app });
 
 const httpServer = createServer(app);
+server.installSubscriptionHandlers(httpServer);
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
   .then(() => {

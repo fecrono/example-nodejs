@@ -45,13 +45,14 @@ const Mutation = {
             user,
         };
     },
-    createUser: (parent, { input }, { currentUser }) => {
+    createUser: (parent, { input }, { currentUser, pubsub }) => {
         if (!currentUser) {
             throw new Error('UNAUTHORIZED');
         }
         const user = new User(input);
         user.save();
 
+        pubsub.publish('user-added', { newUser: user });
         return user;
     },
     updateUser: async(parent, { id, input }, { currentUser }) => {
