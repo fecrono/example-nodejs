@@ -26,3 +26,13 @@ yarn add dotenv express @babel/polyfill @babel/runtime
 
 yarn add apollo-server-express graphql
 ```
+
+## Commands for heroku
+heroku login
+heroku create
+
+
+## URL de mi app
+https://aqueous-ocean-02539.herokuapp.com/
+## repo de GIT
+https://git.heroku.com/aqueous-ocean-02539.git
